@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   border: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   font-family: 'Chakra Petch';
 }
 
@@ -29,6 +29,8 @@ body {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
+  -webkit-box-shadow: 0 1px 0 0 #110038;
+          box-shadow: 0 1px 0 0 #110038;
 }
 
 .borde-ventana-sailor-day {
@@ -59,13 +61,14 @@ header {
   padding: 40px 0;
 }
 
-nav label {
+nav a {
   color: #110038;
   letter-spacing: 0;
   line-height: 18px;
+  text-decoration: none;
 }
 
-nav label span {
+nav a span {
   border-bottom: 1px solid #110038;
 }
 
@@ -84,5 +87,11 @@ nav label span {
   padding: 10px 20px;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  width: 144px;
+  cursor: pointer;
+}
+
+.btn-sailor-day:hover {
+  background-color: #e6bbe2;
 }
 /*# sourceMappingURL=theme-light.css.map */
