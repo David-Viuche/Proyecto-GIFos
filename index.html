@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto GIFos</title>
-    <link rel="stylesheet" href="css/theme-light.css">
+    <link rel="stylesheet" href="css/theme-light.css" id="estilos"> 
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
 </head>
 
@@ -16,24 +16,23 @@
             12.765.803</label>
     </div>
     <header>
-        <img src="img/gifOF_logo.png" alt="logo gifos">
+        <img src="img/gifOF_logo.png" alt="logo gifos" id="logo">
         <nav>
             <button class="btn">Crear Guifos</button>
             <div>
-                <button class="btn">Elegir tema</button>
-                <button class="btn flecha">▼</button>
-                <div class="opciones caja">
-                    <button class="btn-caja"><span>S</span>ailor Day</button>
-                    <button class="btn-caja">Sailor Night</button>
+                <button class="btn" id="btn-elegir-tema">Elegir tema</button>
+                <button class="btn flecha" id="btn-elegir-tema2">▼</button>
+                <div class="opciones caja" id="opciones-tema">
+                    <button class="btn-caja" id="op-light"><span>S</span>ailor Day</button>
+                    <button class="btn-caja" id="op-dark"><span>S</span>ailor Night</button>
                 </div>
             </div>
             <a href="/"><span>M</span>is Guifos</a>
         </nav>
     </header>
 
- <!--   <section class="imgs"></section> -->
-
-    <script src="js/script.js"></script>
+    <!--   <section class="imgs"></section> -->
+    <script src="js/script-dom.js"></script>
 </body>
 
 </html>

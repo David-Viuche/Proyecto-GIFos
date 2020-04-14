@@ -12,7 +12,7 @@ body {
     display: grid;
     grid-template-columns: 7% repeat(4, 1fr) 7%;
     grid-template-rows: auto 110px 100px 110px;
-    background-color: #fff1fd;
+    background-color: $azulOscuro;
 }
 
 .borde-general {
@@ -24,7 +24,7 @@ body {
 }
 
 .borde-ventana {
-    background: linear-gradient(to left, #f7c9f3, #4180f6);
+    background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
     label {
         font-size: 12px;
         color: #fff;
@@ -43,16 +43,15 @@ header {
         padding-right: 1px;
         a {
             margin-left: 6px;
-            color: $azulOscuro;
+            color: #fff;
             letter-spacing: 0;
             line-height: 18px;
             text-decoration: none;
             padding: 10px 10px 10px 0;
-
             &:hover {
-                border: 1px dotted $azulOscuro;
+                border: 1px dotted #fff;
                 span {
-                    border-bottom: 1px solid $azulOscuro;
+                    border-bottom: 1px solid #fff;
                 }
             }
             &:active {
@@ -67,17 +66,17 @@ header {
 }
 
 .btn {
-    color: $azulOscuro;
+    color: #fff;
     font-size: 16px;
     border: 1px solid $azulOscuro;
-    background-color: #f7c9f3;
+    background-color: #ee3efe;
     margin: 0 6px;
     padding: 10px 20px;
-    box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+    box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
     width: 144px;
     cursor: pointer;
     &:hover {
-        background-color: #e6bbe2;
+        background-color: #ce36db;
         border: groove 5px dotted $azulOscuro;
     }
     div &:nth-child(1) {
@@ -94,22 +93,22 @@ header {
 }
 
 .caja {
-    background: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    background: #b4b4b4;
+    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
     padding: 5px;
     display: none;
     flex-direction: column;
     position: absolute;
     top: 43px;
-    left: 5px;
-    width: 185px;
+    left: 7px;
+    width: 183px;
 }
 
 .btn-caja {
-    border: 1px solid #cca6c9;
-    box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
+    background: #cccccc;
+    border: 1px solid #808080;
+    box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
     margin: 3px;
-    background-color: #fff4fd;
     height: 36px;
     text-align: left;
     padding-left: 10px;
@@ -119,9 +118,10 @@ header {
     line-height: 22px;
     cursor: pointer;
     &:hover {
-        background-color: #f0f0f0;
+        background-color: #2e32fb;
+        color: #fff;
         & span {
-            border-bottom: 1px solid $azulOscuro;
+            border-bottom: 1px solid #fff;
         }
     }
 }

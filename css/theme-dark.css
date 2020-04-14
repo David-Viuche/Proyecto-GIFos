@@ -14,7 +14,7 @@ body {
       grid-template-columns: 7% repeat(4, 1fr) 7%;
   -ms-grid-rows: auto 110px 100px 110px;
       grid-template-rows: auto 110px 100px 110px;
-  background-color: #fff1fd;
+  background-color: #110038;
 }
 
 .borde-general {
@@ -35,8 +35,8 @@ body {
 }
 
 .borde-ventana {
-  background: -webkit-gradient(linear, right top, left top, from(#f7c9f3), to(#4180f6));
-  background: linear-gradient(to left, #f7c9f3, #4180f6);
+  background-image: -webkit-gradient(linear, right top, left top, from(#ee3efe), to(#2e32fb));
+  background-image: linear-gradient(270deg, #ee3efe 0%, #2e32fb 100%);
 }
 
 .borde-ventana label {
@@ -73,7 +73,7 @@ header nav {
 
 header nav a {
   margin-left: 6px;
-  color: #110038;
+  color: #fff;
   letter-spacing: 0;
   line-height: 18px;
   text-decoration: none;
@@ -81,11 +81,11 @@ header nav a {
 }
 
 header nav a:hover {
-  border: 1px dotted #110038;
+  border: 1px dotted #fff;
 }
 
 header nav a:hover span {
-  border-bottom: 1px solid #110038;
+  border-bottom: 1px solid #fff;
 }
 
 header nav a:active {
@@ -100,20 +100,20 @@ header nav div {
 }
 
 .btn {
-  color: #110038;
+  color: #fff;
   font-size: 16px;
   border: 1px solid #110038;
-  background-color: #f7c9f3;
+  background-color: #ee3efe;
   margin: 0 6px;
   padding: 10px 20px;
-  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  -webkit-box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #a72cb3, inset 1px 1px 0 0 #ffffff;
   width: 144px;
   cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #e6bbe2;
+  background-color: #ce36db;
   border: groove 5px dotted #110038;
 }
 
@@ -130,9 +130,9 @@ div .btn:nth-child(1) {
 }
 
 .caja {
-  background: #e6e6e6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  background: #b4b4b4;
+  -webkit-box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
   padding: 5px;
   display: none;
   -webkit-box-orient: vertical;
@@ -141,16 +141,16 @@ div .btn:nth-child(1) {
           flex-direction: column;
   position: absolute;
   top: 43px;
-  left: 5px;
-  width: 185px;
+  left: 7px;
+  width: 183px;
 }
 
 .btn-caja {
-  border: 1px solid #cca6c9;
-  -webkit-box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
-          box-shadow: inset -1px -1px 0 0 #e6dce4, inset 1px 1px 0 0 #ffffff;
+  background: #cccccc;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
   margin: 3px;
-  background-color: #fff4fd;
   height: 36px;
   text-align: left;
   padding-left: 10px;
@@ -162,10 +162,11 @@ div .btn:nth-child(1) {
 }
 
 .btn-caja:hover {
-  background-color: #f0f0f0;
+  background-color: #2e32fb;
+  color: #fff;
 }
 
 .btn-caja:hover span {
-  border-bottom: 1px solid #110038;
+  border-bottom: 1px solid #fff;
 }
-/*# sourceMappingURL=theme-light.css.map */
+/*# sourceMappingURL=theme-dark.css.map */
