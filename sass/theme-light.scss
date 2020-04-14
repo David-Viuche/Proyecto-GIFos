@@ -8,59 +8,47 @@ $azulOscuro : #110038;
     font-family: 'Chakra Petch';
 }
 
-body {
+body{
     display: grid;
-    grid-template-columns: 7% 1fr 7%;
-    grid-template-rows: auto auto;
+    grid-template-columns: 7% repeat(4,1fr) 7%;
+    grid-template-rows: auto 110px 100px 110px;
     background-color: #fff1fd;
 }
 
-.borde-ventana-sailor-day label {
-    color: #FFF;
-    font-size: 12px;
-}
-
-.borde-general {
-    grid-row: 1 / 2;
-    grid-column: 1 / 4;
+.borde-general{
+    grid-area: 1 / 1 / 2 / 7 ;
+    display: flex;
+    align-items: center;
+    padding: 5px;
     box-shadow: 0 1px 0 0 #110038;
 }
 
-.borde-ventana-sailor-day {
+.borde-ventana{
     background: linear-gradient(to left, #F7C9F3, #4180F6);
-    padding: 3.5px 10px;
-    display: flex;
+    label{
+        font-size: 12px;
+        color: #fff;
+    }
 }
 
-header {
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
+header{
+    grid-area: 2 / 2 / 3 / 6;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 40px 0;
+    justify-content: space-between;
+
+    nav a{
+        color: $azulOscuro;
+        letter-spacing: 0;
+        line-height: 18px;
+        text-decoration: none;
+        span{
+            border-bottom: 1px solid $azulOscuro;
+        }
+    }
 }
 
-
-nav a {
-    color: $azulOscuro;
-    letter-spacing: 0;
-    line-height: 18px;
-    text-decoration: none;
-}
-
-nav a span{
-    border-bottom: 1px solid $azulOscuro;
-}
-
-.select-theme {
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-}
-
-
-.btn-sailor-day {
+.btn{
     color: $azulOscuro;
     font-size: 16px;
     border: 1px solid $azulOscuro;
@@ -70,8 +58,7 @@ nav a span{
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     width: 144px;
     cursor: pointer;
-}
-
-.btn-sailor-day:hover{
-    background-color: #e6bbe2;
+    &:hover{
+        background-color: #e6bbe2;
+    }
 }

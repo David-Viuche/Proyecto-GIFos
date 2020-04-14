@@ -10,75 +10,69 @@
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 7% 1fr 7%;
-      grid-template-columns: 7% 1fr 7%;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
+  -ms-grid-columns: 7% (1fr)[4] 7%;
+      grid-template-columns: 7% repeat(4, 1fr) 7%;
+  -ms-grid-rows: auto 110px 100px 110px;
+      grid-template-rows: auto 110px 100px 110px;
   background-color: #fff1fd;
-}
-
-.borde-ventana-sailor-day label {
-  color: #FFF;
-  font-size: 12px;
 }
 
 .borde-general {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
   -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-column: 1 / 4;
+  -ms-grid-column-span: 6;
+  grid-area: 1 / 1 / 2 / 7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
   -webkit-box-shadow: 0 1px 0 0 #110038;
           box-shadow: 0 1px 0 0 #110038;
 }
 
-.borde-ventana-sailor-day {
+.borde-ventana {
   background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background: linear-gradient(to left, #F7C9F3, #4180F6);
-  padding: 3.5px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+}
+
+.borde-ventana label {
+  font-size: 12px;
+  color: #fff;
 }
 
 header {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
-  grid-row: 2 / 3;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
+  -ms-grid-column-span: 4;
+  grid-area: 2 / 2 / 3 / 6;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 40px 0;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-nav a {
+header nav a {
   color: #110038;
   letter-spacing: 0;
   line-height: 18px;
   text-decoration: none;
 }
 
-nav a span {
+header nav a span {
   border-bottom: 1px solid #110038;
 }
 
-.select-theme {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-.btn-sailor-day {
+.btn {
   color: #110038;
   font-size: 16px;
   border: 1px solid #110038;
@@ -91,7 +85,7 @@ nav a span {
   cursor: pointer;
 }
 
-.btn-sailor-day:hover {
+.btn:hover {
   background-color: #e6bbe2;
 }
 /*# sourceMappingURL=theme-light.css.map */
