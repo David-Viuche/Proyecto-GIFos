@@ -2,8 +2,8 @@
   margin: 0;
   padding: 0;
   border: 0;
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: 'Chakra Petch';
 }
 
@@ -61,15 +61,42 @@ header {
           justify-content: space-between;
 }
 
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 1px;
+}
+
 header nav a {
+  margin-left: 6px;
   color: #110038;
   letter-spacing: 0;
   line-height: 18px;
   text-decoration: none;
+  padding: 10px 10px 10px 0;
 }
 
 header nav a span {
   border-bottom: 1px solid #110038;
+}
+
+header nav a:hover {
+  border: 1px dotted #110038;
+}
+
+header nav a:active {
+  color: #1100389f;
+}
+
+header nav div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
 }
 
 .btn {
@@ -77,7 +104,7 @@ header nav a span {
   font-size: 16px;
   border: 1px solid #110038;
   background-color: #F7C9F3;
-  margin: 0 5px;
+  margin: 0 6px;
   padding: 10px 20px;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
@@ -87,5 +114,65 @@ header nav a span {
 
 .btn:hover {
   background-color: #e6bbe2;
+  border: groove 5px dotted #110038;
+}
+
+div .btn:nth-child(1) {
+  margin-right: 0;
+}
+
+.flecha {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-left: 0;
+  border-left: 0;
+}
+
+.caja {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 40px;
+  left: 5px;
+  width: 185px;
+}
+
+.btn-caja {
+  border: 1px solid #CCA6C9;
+  -webkit-box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+  margin: 3px;
+  background-color: #FFF4FD;
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  padding-left: 10px;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.btn-caja:hover {
+  background-color: #F0F0F0;
+}
+
+.btn-caja span {
+  border-bottom: 1px solid #110038;
 }
 /*# sourceMappingURL=theme-light.css.map */

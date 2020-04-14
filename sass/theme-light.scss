@@ -4,7 +4,7 @@ $azulOscuro : #110038;
     margin: 0;
     padding: 0;
     border: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
     font-family: 'Chakra Petch';
 }
 
@@ -20,7 +20,7 @@ body{
     display: flex;
     align-items: center;
     padding: 5px;
-    box-shadow: 0 1px 0 0 #110038;
+    box-shadow: 0 1px 0 0 $azulOscuro;
 }
 
 .borde-ventana{
@@ -37,13 +37,30 @@ header{
     align-items: center;
     justify-content: space-between;
 
-    nav a{
-        color: $azulOscuro;
-        letter-spacing: 0;
-        line-height: 18px;
-        text-decoration: none;
-        span{
-            border-bottom: 1px solid $azulOscuro;
+    nav{
+        display: flex; 
+        align-items: center;
+        padding-right: 1px;
+        a{
+            margin-left: 6px;
+            color: $azulOscuro;
+            letter-spacing: 0;
+            line-height: 18px;
+            text-decoration: none;
+            padding: 10px 10px 10px 0;
+            span{
+                border-bottom: 1px solid $azulOscuro;
+            }
+            &:hover{
+                border: 1px dotted $azulOscuro;
+            }
+            &:active{
+                color: #1100389f;
+            }
+        }
+        div {
+            display: flex; 
+            position: relative; 
         }
     }
 }
@@ -53,12 +70,58 @@ header{
     font-size: 16px;
     border: 1px solid $azulOscuro;
     background-color: #F7C9F3;
-    margin: 0 5px;
+    margin: 0 6px;
     padding: 10px 20px;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
     width: 144px;
     cursor: pointer;
     &:hover{
         background-color: #e6bbe2;
+        border: groove 5px dotted $azulOscuro;
+    }
+    div &:nth-child(1){
+        margin-right: 0;
+    }
+}
+
+.flecha{
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-left: 0;
+    border-left: 0;
+}
+
+.caja{
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    width: 185px;
+}
+
+.btn-caja{
+    border: 1px solid #CCA6C9;
+    box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+    margin: 3px;
+    background-color: #FFF4FD;
+    height: 36px;
+    display: flex;
+    justify-content: start;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #110038;
+    letter-spacing: 0;
+    line-height: 22px;
+    cursor: pointer;
+    &:hover{
+        background-color: #F0F0F0;
+    }
+    span{
+        border-bottom: 1px solid $azulOscuro;
     }
 }
