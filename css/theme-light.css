@@ -12,8 +12,8 @@ body {
   display: grid;
   -ms-grid-columns: 7% (1fr)[4] 7%;
       grid-template-columns: 7% repeat(4, 1fr) 7%;
-  -ms-grid-rows: auto 110px 100px 110px;
-      grid-template-rows: auto 110px 100px 110px;
+  -ms-grid-rows: auto 110px 100px 110px auto;
+      grid-template-rows: auto 110px 100px 110px auto;
   background-color: #fff1fd;
 }
 
@@ -143,6 +143,7 @@ div .btn:nth-child(1) {
   top: 43px;
   left: 5px;
   width: 185px;
+  z-index: 3;
 }
 
 .btn-caja {
@@ -167,5 +168,134 @@ div .btn:nth-child(1) {
 
 .btn-caja:hover span {
   border-bottom: 1px solid #110038;
+}
+
+section.buscar {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: 3 / 2 / 4 / 6;
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  padding: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+section.buscar label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3px;
+}
+
+section.buscar div.borde-ventana {
+  height: 24px;
+}
+
+section.buscar div.busqueda {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4px;
+}
+
+section.buscar div.busqueda input {
+  font-size: 16px;
+  width: 90%;
+  margin: 3px;
+  height: 80%;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset 2px 2px 0 0;
+          box-shadow: inset 2px 2px 0 0;
+  padding: 15px;
+}
+
+section.buscar div.busqueda button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: auto;
+  height: 60%;
+  margin-left: 5px;
+  font-size: 16px;
+  color: #b4b4b4;
+  line-height: 18px;
+  background: #e6e6e6;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+  padding: 5px 10px 5px 3px;
+  cursor: pointer;
+}
+
+section.buscar div.busqueda button img {
+  margin: 5px;
+}
+
+.caja-sugeridos {
+  position: absolute;
+  top: 100px;
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  width: 100%;
+  left: -0.5px;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  padding: 10px 5px;
+}
+
+.caja-sugeridos button.btn-sugeridos {
+  width: 89.5%;
+  margin: 5px;
+  background: #f0f0f0;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+  text-align: left;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.caja-sugeridos button.btn-sugeridos:hover {
+  background-color: #dbdbdb;
+}
+
+section.imgs {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: 5 / 2  / 6 / 6;
 }
 /*# sourceMappingURL=theme-light.css.map */

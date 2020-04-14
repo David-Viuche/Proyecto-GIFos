@@ -11,7 +11,7 @@ $azulOscuro: #110038;
 body {
     display: grid;
     grid-template-columns: 7% repeat(4, 1fr) 7%;
-    grid-template-rows: auto 110px 100px 110px;
+    grid-template-rows: auto 110px 100px 110px auto;
     background-color: #fff1fd;
 }
 
@@ -103,6 +103,7 @@ header {
     top: 43px;
     left: 5px;
     width: 185px;
+    z-index: 3;
 }
 
 .btn-caja {
@@ -124,4 +125,90 @@ header {
             border-bottom: 1px solid $azulOscuro;
         }
     }
+}
+
+section.buscar {
+    grid-area: 3 / 2 / 4 / 6;
+    background: #e6e6e6;
+    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    padding: 3px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    label {
+        display: flex;
+        align-items: center;
+        padding: 3px;
+    }
+    div.borde-ventana {
+        height: 24px;
+    }
+    div.busqueda {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 4px;
+        input {
+            font-size: 16px;
+            width: 90%;
+            margin: 3px;
+            height: 80%;
+            border: 1px solid #979797;
+            box-shadow: inset 2px 2px 0 0;
+            padding: 15px;
+        }
+        button {
+            display: flex;
+            align-items: center;
+            width: auto;
+            height: 60%;
+            margin-left: 5px;
+            font-size: 16px;
+            color: #b4b4b4;
+            line-height: 18px;
+            background: #e6e6e6;
+            border: 1px solid #808080;
+            box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+            padding: 5px 10px 5px 3px;
+            cursor: pointer;
+            img {
+                margin: 5px;
+            }
+        }
+    }
+}
+
+.caja-sugeridos {
+    position: absolute;
+    top: 100px;
+    background: #e6e6e6;
+    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    width: 100%;
+    left: -0.5px;
+    display: none;
+    flex-direction: column;
+    height: auto;
+    justify-content: left;
+    padding: 10px 5px;
+    button.btn-sugeridos {
+        width: 89.5%;
+        margin: 5px;
+        background: #f0f0f0;
+        border: 1px solid #808080;
+        box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+        text-align: left;
+        padding: 5px 10px;
+        cursor: pointer;
+        &:hover{
+            background-color: #dbdbdb;
+        }
+    }
+}
+
+section.imgs{
+    grid-area: 5 / 2  / 6 / 6;
 }
