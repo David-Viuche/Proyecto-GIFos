@@ -26,9 +26,15 @@ body {
 .borde-ventana {
     background: linear-gradient(to left, #f7c9f3, #4180f6);
     label {
-        font-size: 12px;
+        font-size: 14px;
         color: #fff;
+        font-weight: bold;
     }
+}
+
+#borde-general{
+    font-size: 12px;
+    font-weight: normal;
 }
 
 header {
@@ -291,6 +297,59 @@ div.container-tendencias-giph {
     flex-wrap: wrap;
     justify-content: space-between;
     div.caja-tendencia {
+        background: #e6e6e6;
+        box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+        width: auto;
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 20px;
+        div{
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            display: none;
+            height: 25px;
+            padding: 5px;
+            width: 97%;
+        }
+        &:hover > img{
+            transform: scale(0.985);
+
+        }
+        &:hover > div{
+            display: flex;
+        }
+    }
+    img {
+        width: 275px;
+        height: 300px;
+        max-width: 550px;
+      
+    }
+}
+
+section.busqueda{
+    display: none;
+    grid-area: 6 / 2 / 7 / 6;
+}
+
+section.busqueda div.titulo {
+    background: #fffafe;
+    border: 1px solid #e6bbe2;
+    box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+    padding: 10px;
+}
+
+div.container-busqueda-giph {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div.caja-busqueda {
         background: #e6e6e6;
         box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
         width: auto;

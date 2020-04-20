@@ -59,7 +59,15 @@ textoBusqueda.addEventListener('focusout', cerrarCajaSugeridos);
 
 btnBuscar.addEventListener('click', () => {
     let texto = textoBusqueda.value;
+
     if (texto) {
+        document.getElementById('titulo-resultado').innerText = texto+" (resultados)";
+        let sugeridos = document.getElementById('contenido');
+        let tendencias = document.getElementById('tendencias');
+        sugeridos.style.display = 'none';
+        tendencias.style.display = 'none';
+        let busqueda = document.getElementById('busqueda');
+        busqueda.style.display = 'grid';
         peticionBusqueda(texto);
     }
 });
@@ -87,6 +95,13 @@ function peticionSugerencias(texto) {
                     sug.id = `op-sugeridos-${index + 1}`;
                     sug.innerHTML = json.data[index].name;
                     sug.addEventListener('click', () => {
+                        document.getElementById('titulo-resultado').innerText = sug.innerText+" (resultados)";
+                        let sugeridos = document.getElementById('contenido');
+                        let tendencias = document.getElementById('tendencias');
+                        sugeridos.style.display = 'none';
+                        tendencias.style.display = 'none';
+                        let busqueda = document.getElementById('busqueda');
+                        busqueda.style.display = 'grid';
                         peticionBusqueda(sug.innerText);
                     });
                     cajaSugeridos.appendChild(sug);
@@ -101,22 +116,43 @@ function peticionSugerencias(texto) {
         })
 }
 
-function peticionBusqueda(url) {
+function peticionBusqueda(url,id) {
     let giphy = 'http://api.giphy.com/v1/gifs/search';
     let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
-    // console.log(giphy + "?api_key=" + key + "&q=" + url + "&limit=" + 10);
-    fetch(giphy + "?api_key=" + key + "&q=" + url)
+    let rating = '&rating=g';
+    let limit = '&limit=24';
+    
+    fetch(giphy + "?api_key=" + key + "&q=" + url + rating +limit)
         .then((data) => {
             return data.json()
         })
         .then((json) => {
-            document.getElementById('container-sugerencia-giph').innerHTML = "";
+            let containerBusqueda = document.getElementById('container-busqueda-giph');
+            containerBusqueda.innerHTML = "";
             json.data.map((el) => {
-                let url = el.images.original.url;
-                let img = document.createElement('img');
-                img.src = url;
-                document.getElementById('container-sugerencia-giph').appendChild(img);
+                let cajaTendencia = document.createElement('div');
+                cajaTendencia.classList.add('caja-busqueda');
+
+                let gif = document.createElement('img');
+                gif.src = el.images.fixed_width_downsampled.url;
+                cajaTendencia.appendChild(gif);
+
+                let titulo = document.createElement('div');
+                titulo.classList.add('borde-ventana');
+                let label = document.createElement('label');
+                let textTitulo = el.title.split("by");
+                label.innerText = (textTitulo[0]);
+                titulo.appendChild(label);
+                cajaTendencia.appendChild(titulo);
+
+                cajaTendencia.addEventListener('click', () => {
+                    let idGIF = el.id;
+                    console.log("GIF", idGIF);
+                });
+    
+                containerBusqueda.appendChild(cajaTendencia);
             });
+            
         })
         .catch((err) => {
             console.log(err);
@@ -141,7 +177,6 @@ function peticionGiphSugerencia(id) {
                 let cajaBorde = document.createElement('div');
                 cajaBorde.classList.add('borde-ventana');
                 let titulo = document.createElement('label');
-console.log(id,json.data.title);
                 titulo.innerText = json.data.title.split("by")[0] || "GIF";
                 let imgcerrar = document.createElement('img');
                 imgcerrar.src = "img/close.svg";
@@ -202,9 +237,9 @@ function peticionTendenciasGiph() {
                 titulo.appendChild(label);
                 cajaTendencia.appendChild(titulo);
 
-                cajaTendencia.addEventListener('click',()=>{
+                cajaTendencia.addEventListener('click', () => {
                     let idGIF = el.id;
-                    console.log("GIF",idGIF);
+                    console.log("GIF", idGIF);
                 });
                 let containerTendencias = document.getElementById('container-tendencias-giph');
                 containerTendencias.appendChild(cajaTendencia);
