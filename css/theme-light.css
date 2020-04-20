@@ -12,8 +12,8 @@ body {
   display: grid;
   -ms-grid-columns: 7% (1fr)[4] 7%;
       grid-template-columns: 7% repeat(4, 1fr) 7%;
-  -ms-grid-rows: auto 110px 100px 110px auto;
-      grid-template-rows: auto 110px 100px 110px auto;
+  -ms-grid-rows: auto 110px 100px 110px auto auto 100px;
+      grid-template-rows: auto 110px 100px 110px auto auto 100px;
   background-color: #fff1fd;
 }
 
@@ -269,6 +269,7 @@ section.buscar div.busqueda button img {
       -ms-flex-pack: left;
           justify-content: left;
   padding: 10px 5px;
+  z-index: 100;
 }
 
 .caja-sugeridos button.btn-sugeridos {
@@ -291,11 +292,96 @@ section.buscar div.busqueda button img {
   background-color: #dbdbdb;
 }
 
-section.imgs {
+section.contenido {
   -ms-grid-row: 5;
   -ms-grid-row-span: 1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
-  grid-area: 5 / 2  / 6 / 6;
+  grid-area: 5 / 2 / 6 / 6;
+}
+
+.titulo {
+  position: relative;
+  background: #fffafe;
+  border: 1px solid #e6bbe2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+          box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+  padding: 10px;
+  top: -42px;
+}
+
+.container-sugerencia-giph {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: 6 / 2 / 7 / 6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.container-sugerencia-giph .caja-tendencia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 275px;
+  height: 300px;
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  position: relative;
+}
+
+.container-sugerencia-giph .caja-tendencia div {
+  width: 97.5%;
+  margin: 2px auto auto auto;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 25px;
+  padding: 5px;
+}
+
+.container-sugerencia-giph .caja-tendencia div img {
+  cursor: pointer;
+}
+
+.container-sugerencia-giph .caja-tendencia img.giph {
+  width: 97.5%;
+  margin: 1px auto auto auto;
+  height: 89%;
+  margin-bottom: 4px;
+}
+
+.container-sugerencia-giph .caja-tendencia button {
+  position: absolute;
+  width: 81px;
+  height: 34px;
+  left: 20px;
+  bottom: 20px;
+  background: #4180f6;
+  color: #fff;
+  border: 1px solid #4c2f99;
+  -webkit-box-shadow: inset -1px -1px 0 0 #284f99, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #284f99, inset 1px 1px 0 0 #ffffff;
+  cursor: pointer;
+}
+
+.container-sugerencia-giph .caja-tendencia button:hover {
+  background: #3A72DB;
 }
 /*# sourceMappingURL=theme-light.css.map */
