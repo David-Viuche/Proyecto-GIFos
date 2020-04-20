@@ -141,14 +141,15 @@ function peticionGiphSugerencia(id) {
                 let cajaBorde = document.createElement('div');
                 cajaBorde.classList.add('borde-ventana');
                 let titulo = document.createElement('label');
-                titulo.innerText = json.data.title;
+console.log(id,json.data.title);
+                titulo.innerText = json.data.title.split("by")[0] || "GIF";
                 let imgcerrar = document.createElement('img');
                 imgcerrar.src = "img/close.svg";
                 imgcerrar.alt = "boton-cerrar";
                 imgcerrar.id = `cerrar${id}`;
                 let imgGiph = document.createElement('img');
                 imgGiph.classList.add('giph');
-                imgGiph.src = json.data.images.downsized_large.url;
+                imgGiph.src = json.data.images.fixed_width_downsampled.url;
                 let buttonVerMas = document.createElement('button');
                 buttonVerMas.innerText = 'Ver más...';
                 cajaBorde.appendChild(titulo);
@@ -161,9 +162,53 @@ function peticionGiphSugerencia(id) {
                     document.getElementById('container-sugerencia-giph').removeChild(elemento);
                     peticionGiphSugerencia(id);
                 });
+                buttonVerMas.addEventListener('click', () => {
+                    let idGIF = json.data.id;
+                    console.log("ver mas", idGIF);
+                });
                 let containerSugerencias = document.getElementById('container-sugerencia-giph');
                 containerSugerencias.appendChild(cajaT);
             }
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+}
+
+function peticionTendenciasGiph() {
+    let giphy = 'https://api.giphy.com/v1/gifs/trending';
+    let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
+    let rating = '&rating=g';
+    let limit = '&limit=24';
+
+    fetch(giphy + "?api_key=" + key + rating + limit)
+        .then((data) => {
+            return data.json();
+        })
+        .then((json) => {
+            json.data.map((el) => {
+                let cajaTendencia = document.createElement('div');
+                cajaTendencia.classList.add('caja-tendencia');
+
+                let gif = document.createElement('img');
+                gif.src = el.images.fixed_width_downsampled.url;
+                cajaTendencia.appendChild(gif);
+
+                let titulo = document.createElement('div');
+                titulo.classList.add('borde-ventana');
+                let label = document.createElement('label');
+                let textTitulo = el.title.split("by");
+                label.innerText = (textTitulo[0]);
+                titulo.appendChild(label);
+                cajaTendencia.appendChild(titulo);
+
+                cajaTendencia.addEventListener('click',()=>{
+                    let idGIF = el.id;
+                    console.log("GIF",idGIF);
+                });
+                let containerTendencias = document.getElementById('container-tendencias-giph');
+                containerTendencias.appendChild(cajaTendencia);
+            });
         })
         .catch((err) => {
             console.log(err);
@@ -175,3 +220,4 @@ for (let i = 0; i < 4; i++) {
     peticionGiphSugerencia(i);
 }
 
+peticionTendenciasGiph();

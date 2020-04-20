@@ -300,7 +300,7 @@ section.contenido {
   grid-area: 5 / 2 / 6 / 6;
 }
 
-.titulo {
+section.contenido .titulo {
   position: relative;
   background: #fffafe;
   border: 1px solid #e6bbe2;
@@ -382,6 +382,82 @@ section.contenido {
 }
 
 .container-sugerencia-giph .caja-tendencia button:hover {
-  background: #3A72DB;
+  background: #3a72db;
+}
+
+section.tendencias div.titulo {
+  margin-top: 60px;
+  background: #fffafe;
+  border: 1px solid #e6bbe2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+          box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+  padding: 10px;
+}
+
+section.tendencias {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: 6 / 2 / 7 / 6;
+}
+
+div.container-tendencias-giph {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+div.container-tendencias-giph div.caja-tendencia {
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  width: auto;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+div.container-tendencias-giph div.caja-tendencia div {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  display: none;
+  height: 25px;
+  padding: 5px;
+  width: 97%;
+}
+
+div.container-tendencias-giph div.caja-tendencia:hover > img {
+  -webkit-transform: scale(0.985);
+          transform: scale(0.985);
+}
+
+div.container-tendencias-giph div.caja-tendencia:hover > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.container-tendencias-giph img {
+  width: 275px;
+  height: 300px;
+  max-width: 550px;
 }
 /*# sourceMappingURL=theme-light.css.map */
