@@ -33,6 +33,10 @@ opDark.addEventListener('click', () => {
     logo.src = "img/gifOF_logo_dark.png";
 });
 
+logo.addEventListener('click', () => {
+    window.location.reload();
+});
+
 buscarContainer.addEventListener('mouseleave', () => {
     textoBusqueda.addEventListener('focusout', cerrarCajaSugeridos);
     cajaSugeridos.style.display = 'none';
@@ -61,16 +65,22 @@ btnBuscar.addEventListener('click', () => {
     let texto = textoBusqueda.value;
 
     if (texto) {
-        document.getElementById('titulo-resultado').innerText = texto+" (resultados)";
-        let sugeridos = document.getElementById('contenido');
-        let tendencias = document.getElementById('tendencias');
-        sugeridos.style.display = 'none';
-        tendencias.style.display = 'none';
-        let busqueda = document.getElementById('busqueda');
-        busqueda.style.display = 'grid';
-        peticionBusqueda(texto);
+        cargarBusqueda(texto);
     }
 });
+
+function cargarBusqueda(texto, id) {
+    document.getElementById('titulo-resultado').innerText = texto + " (resultados)";
+    let sugeridos = document.getElementById('contenido');
+    let tendencias = document.getElementById('tendencias');
+    sugeridos.style.display = 'none';
+    tendencias.style.display = 'none';
+    let busqueda = document.getElementById('busqueda');
+    busqueda.style.display = 'grid';
+    peticionBusqueda(texto ,id);
+    let textButton = texto.split(" ");
+    peticionSugerenciasBotones(textButton[0].toLowerCase());
+}
 
 function cerrarCajaSugeridos() {
     btnBuscar.style.backgroundColor = '#e6e6e6';
@@ -95,14 +105,7 @@ function peticionSugerencias(texto) {
                     sug.id = `op-sugeridos-${index + 1}`;
                     sug.innerHTML = json.data[index].name;
                     sug.addEventListener('click', () => {
-                        document.getElementById('titulo-resultado').innerText = sug.innerText+" (resultados)";
-                        let sugeridos = document.getElementById('contenido');
-                        let tendencias = document.getElementById('tendencias');
-                        sugeridos.style.display = 'none';
-                        tendencias.style.display = 'none';
-                        let busqueda = document.getElementById('busqueda');
-                        busqueda.style.display = 'grid';
-                        peticionBusqueda(sug.innerText);
+                        cargarBusqueda(sug.innerText);
                     });
                     cajaSugeridos.appendChild(sug);
 
@@ -116,13 +119,15 @@ function peticionSugerencias(texto) {
         })
 }
 
-function peticionBusqueda(url,id) {
+function peticionBusqueda(url, id) {
     let giphy = 'http://api.giphy.com/v1/gifs/search';
     let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
     let rating = '&rating=g';
     let limit = '&limit=24';
-    
-    fetch(giphy + "?api_key=" + key + "&q=" + url + rating +limit)
+
+    let endPoint = (id || url) ? giphy + "?api_key=" + key + "&q=" + url + rating + limit : "api.giphy.com/v1/gifs" + "?api_key=" + key + "&ids="+id;
+
+    fetch(endPoint)
         .then((data) => {
             return data.json()
         })
@@ -147,12 +152,12 @@ function peticionBusqueda(url,id) {
 
                 cajaTendencia.addEventListener('click', () => {
                     let idGIF = el.id;
-                    console.log("GIF", idGIF);
+                    cargarBusqueda(label.innerText,idGIF);
                 });
-    
+
                 containerBusqueda.appendChild(cajaTendencia);
             });
-            
+
         })
         .catch((err) => {
             console.log(err);
@@ -199,7 +204,7 @@ function peticionGiphSugerencia(id) {
                 });
                 buttonVerMas.addEventListener('click', () => {
                     let idGIF = json.data.id;
-                    console.log("ver mas", idGIF);
+                    cargarBusqueda(titulo.innerText,idGIF);
                 });
                 let containerSugerencias = document.getElementById('container-sugerencia-giph');
                 containerSugerencias.appendChild(cajaT);
@@ -239,7 +244,7 @@ function peticionTendenciasGiph() {
 
                 cajaTendencia.addEventListener('click', () => {
                     let idGIF = el.id;
-                    console.log("GIF", idGIF);
+                    cargarBusqueda(label.innerText,idGIF);
                 });
                 let containerTendencias = document.getElementById('container-tendencias-giph');
                 containerTendencias.appendChild(cajaTendencia);
@@ -250,9 +255,48 @@ function peticionTendenciasGiph() {
         })
 }
 
+function peticionSugerenciasBotones(texto) {
+    let giphy = 'http://api.giphy.com/v1/gifs/search/tags';
+    let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
 
-for (let i = 0; i < 4; i++) {
-    peticionGiphSugerencia(i);
+    fetch(giphy + "?api_key=" + key + "&q=" + `'${texto}'`)
+        .then((data) => {
+            return data.json()
+        })
+        .then((json) => {
+            if (json.data.length) {
+                let cajaRelacionados = document.getElementById('caja-sugerencias');
+                cajaRelacionados.innerHTML = "";
+
+                for (let index = 0; index < json.data.length; index++) {
+                    let sug = document.createElement('button');
+                    sug.innerHTML = "#" + json.data[index].name;
+
+                    sug.addEventListener('click', () => {
+                        cargarBusqueda(json.data[index].name);
+                    });
+                    cajaRelacionados.appendChild(sug);
+
+                    if (index == 5)
+                        break;
+                }
+            }else{
+                console.log("no se encontro");
+            }
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 }
 
-peticionTendenciasGiph();
+
+function cargarDatosIniciales() {
+    for (let i = 0; i < 4; i++) {
+        peticionGiphSugerencia(i);
+    }
+
+    peticionTendenciasGiph();
+}
+
+
+window.onload = cargarDatosIniciales;
