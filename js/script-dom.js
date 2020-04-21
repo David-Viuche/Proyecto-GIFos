@@ -94,7 +94,7 @@ function cerrarCajaSugeridos() {
 // peticiones API
 
 function peticionSugerencias(texto) {
-    let giphy = 'http://api.giphy.com/v1/gifs/search/tags';
+    let giphy = 'https://api.giphy.com/v1/gifs/search/tags';
     let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
 
     fetch(giphy + "?api_key=" + key + "&q=" + `'${texto}'`)
@@ -126,7 +126,7 @@ function peticionSugerencias(texto) {
 }
 
 function peticionBusqueda(url) {
-    let giphy = 'http://api.giphy.com/v1/gifs/search';
+    let giphy = 'https://api.giphy.com/v1/gifs/search';
     let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
     let rating = '&rating=g';
     let limit = '&limit=24';
@@ -307,7 +307,7 @@ function peticionTendenciasGiph() {
 }
 
 function peticionSugerenciasBotones(texto) {
-    let giphy = 'http://api.giphy.com/v1/gifs/search/tags';
+    let giphy = 'https://api.giphy.com/v1/gifs/search/tags';
     let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
 
     fetch(giphy + "?api_key=" + key + "&q=" + `'${texto}'`)
