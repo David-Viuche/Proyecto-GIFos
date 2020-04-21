@@ -125,12 +125,8 @@ function peticionBusqueda(url, id) {
     let rating = '&rating=g';
     let limit = '&limit=24';
 
-<<<<<<< HEAD
     let endPoint = (id || url) ? giphy + "?api_key=" + key + "&q=" + url + rating + limit : "http://api.giphy.com/v1/gifs" + "?api_key=" + key + "&ids="+id;
-=======
-    let endPoint = (id || url) ? giphy + "?api_key=" + key + "&q=" + url + rating + limit : "api.giphy.com/v1/gifs" + "?api_key=" + key + "&ids="+id;
->>>>>>> 4e18a56585746b203f3b8b0897ee457b7c0d4f66
-
+git
     fetch(endPoint)
         .then((data) => {
             return data.json()
