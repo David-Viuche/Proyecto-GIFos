@@ -245,7 +245,7 @@ section.contenido .titulo {
         box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
         position: relative;
         div {
-            width: 97.5%;
+            width: 98%;
             margin: 2px auto auto auto;
             font-size: 14px;
             color: #ffffff;
@@ -317,7 +317,7 @@ div.container-tendencias-giph {
             display: none;
             height: 25px;
             padding: 5px;
-            width: 97%;
+            width: 98%;
         }
         &:hover > img {
             transform: scale(0.985);
@@ -327,7 +327,7 @@ div.container-tendencias-giph {
         }
     }
     img {
-        width: 275px;
+        min-width: 275px;
         height: 300px;
         max-width: 550px;
     }
@@ -355,13 +355,14 @@ div.container-busqueda-giph {
         background: #e6e6e6;
         box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
         width: auto;
-        height: 300px;
+        height: auto;
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
         cursor: pointer;
         margin-bottom: 20px;
+        min-width: 275px;
         div {
             position: absolute;
             bottom: 4px;
@@ -379,7 +380,7 @@ div.container-busqueda-giph {
         }
     }
     img {
-        width: 275px;
+        min-width: 275px;
         height: 300px;
         max-width: 550px;
     }

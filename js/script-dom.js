@@ -48,7 +48,11 @@ cajaSugeridos.addEventListener('mouseover', () => {
 });
 
 textoBusqueda.addEventListener('focus', () => {
-    btnBuscar.style.backgroundColor = '#F7C9F3';
+    if (linkCss.href == "css/theme-dark.css") {
+        btnBuscar.style.backgroundColor = '#EE3EFE';
+    } else {
+        btnBuscar.style.backgroundColor = '#F7C9F3';
+    }
 });
 
 textoBusqueda.addEventListener('input', () => {
@@ -69,7 +73,7 @@ btnBuscar.addEventListener('click', () => {
     }
 });
 
-function cargarBusqueda(texto, id) {
+function cargarBusqueda(texto) {
     document.getElementById('titulo-resultado').innerText = texto + " (resultados)";
     let sugeridos = document.getElementById('contenido');
     let tendencias = document.getElementById('tendencias');
@@ -77,7 +81,7 @@ function cargarBusqueda(texto, id) {
     tendencias.style.display = 'none';
     let busqueda = document.getElementById('busqueda');
     busqueda.style.display = 'grid';
-    peticionBusqueda(texto ,id);
+    peticionBusqueda(texto);
     let textButton = texto.split(" ");
     peticionSugerenciasBotones(textButton[0].toLowerCase());
 }
@@ -86,6 +90,8 @@ function cerrarCajaSugeridos() {
     btnBuscar.style.backgroundColor = '#e6e6e6';
     cajaSugeridos.style.display = 'none';
 }
+
+// peticiones API
 
 function peticionSugerencias(texto) {
     let giphy = 'http://api.giphy.com/v1/gifs/search/tags';
@@ -119,45 +125,63 @@ function peticionSugerencias(texto) {
         })
 }
 
-function peticionBusqueda(url, id) {
+function peticionBusqueda(url) {
     let giphy = 'http://api.giphy.com/v1/gifs/search';
     let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
     let rating = '&rating=g';
     let limit = '&limit=24';
-
-    let endPoint = (id || url) ? giphy + "?api_key=" + key + "&q=" + url + rating + limit : "http://api.giphy.com/v1/gifs" + "?api_key=" + key + "&ids="+id;
-
+    let endPoint = giphy + "?api_key=" + key + "&q=" + url + rating + limit;
     fetch(endPoint)
         .then((data) => {
             return data.json()
         })
         .then((json) => {
-            let containerBusqueda = document.getElementById('container-busqueda-giph');
-            containerBusqueda.innerHTML = "";
-            json.data.map((el) => {
-                let cajaTendencia = document.createElement('div');
-                cajaTendencia.classList.add('caja-busqueda');
+            console.log(json);
+            if (json.data.length) {
+                let containerBusqueda = document.getElementById('container-busqueda-giph');
+                containerBusqueda.innerHTML = "";
+                json.data.map((el) => {
+                    let cajaTendencia = document.createElement('div');
+                    cajaTendencia.classList.add('caja-busqueda');
 
-                let gif = document.createElement('img');
-                gif.src = el.images.fixed_width_downsampled.url;
-                cajaTendencia.appendChild(gif);
+                    let gif = document.createElement('img');
+                    gif.src = el.images.fixed_width_downsampled.url;
+                    if (el.images.fixed_width_downsampled.width > el.images.fixed_width_downsampled.height) {
+                        gif.style.width = "550px";
+                    }
+                    cajaTendencia.appendChild(gif);
 
-                let titulo = document.createElement('div');
-                titulo.classList.add('borde-ventana');
-                let label = document.createElement('label');
-                let textTitulo = el.title.split("by");
-                label.innerText = (textTitulo[0]);
-                titulo.appendChild(label);
-                cajaTendencia.appendChild(titulo);
+                    let titulo = document.createElement('div');
+                    titulo.classList.add('borde-ventana');
+                    let label = document.createElement('label');
+                    let textTitulo = el.title.split("by");
+                    let tags = textTitulo[0].split(" ");
+                    let tagsTitulo = "";
+                    tags.forEach(tag => {
+                        if (tag)
+                            tagsTitulo += ("#" + tag + " ");
+                    });
+                    label.innerText = (tagsTitulo);
+                    titulo.appendChild(label);
+                    cajaTendencia.appendChild(titulo);
 
-                cajaTendencia.addEventListener('click', () => {
-                    let idGIF = el.id;
-                    cargarBusqueda(label.innerText,idGIF);
+                    cajaTendencia.addEventListener('click', () => {
+                        let buscar = label.innerText.split("#");
+                        let terminoBusqueda = "";
+                        for (let i = 0; i < buscar.length; i++) {
+                            terminoBusqueda += buscar[i] + " ";
+                            if (i == 3)
+                                break;
+                        }
+                        cargarBusqueda(terminoBusqueda);
+                    });
+
+                    containerBusqueda.appendChild(cajaTendencia);
                 });
-
-                containerBusqueda.appendChild(cajaTendencia);
-            });
-
+                window.scrollTo(0, 330);
+            } else {
+                console.log("ningun resutlado de busqueda");
+            }
         })
         .catch((err) => {
             console.log(err);
@@ -182,7 +206,12 @@ function peticionGiphSugerencia(id) {
                 let cajaBorde = document.createElement('div');
                 cajaBorde.classList.add('borde-ventana');
                 let titulo = document.createElement('label');
-                titulo.innerText = json.data.title.split("by")[0] || "GIF";
+                let tituloFinal = json.data.title.split("by")[0].split(" ");
+                if (tituloFinal[0] == "") {
+                    titulo.innerText = "#GIF";
+                } else {
+                    titulo.innerText = "#" + tituloFinal[0][0].toUpperCase() + tituloFinal[0].slice(1);
+                }
                 let imgcerrar = document.createElement('img');
                 imgcerrar.src = "img/close.svg";
                 imgcerrar.alt = "boton-cerrar";
@@ -203,8 +232,14 @@ function peticionGiphSugerencia(id) {
                     peticionGiphSugerencia(id);
                 });
                 buttonVerMas.addEventListener('click', () => {
-                    let idGIF = json.data.id;
-                    cargarBusqueda(titulo.innerText,idGIF);
+                    let buscar = titulo.innerText.split("#");
+                    let terminoBusqueda = "";
+                    for (let i = 0; i < buscar.length; i++) {
+                        terminoBusqueda += buscar[i] + " ";
+                        if (i == 3)
+                            break;
+                    }
+                    cargarBusqueda(terminoBusqueda);
                 });
                 let containerSugerencias = document.getElementById('container-sugerencia-giph');
                 containerSugerencias.appendChild(cajaT);
@@ -232,19 +267,35 @@ function peticionTendenciasGiph() {
 
                 let gif = document.createElement('img');
                 gif.src = el.images.fixed_width_downsampled.url;
+                if (el.images.fixed_width_downsampled.width > el.images.fixed_width_downsampled.height) {
+                    gif.style.width = "550px";
+                }
                 cajaTendencia.appendChild(gif);
-
                 let titulo = document.createElement('div');
                 titulo.classList.add('borde-ventana');
                 let label = document.createElement('label');
                 let textTitulo = el.title.split("by");
-                label.innerText = (textTitulo[0]);
+                let tituloFinal = textTitulo[0].split(" ");
+                if (tituloFinal[0] == "" || textTitulo == "") {
+                    label.innerText = "#GIF";
+                } else {
+                    for (let i = 0; i < tituloFinal.length; i++) {
+                        if (tituloFinal[i] !== "")
+                            label.innerText += " #" + tituloFinal[i];
+                    }
+                }
                 titulo.appendChild(label);
                 cajaTendencia.appendChild(titulo);
 
                 cajaTendencia.addEventListener('click', () => {
-                    let idGIF = el.id;
-                    cargarBusqueda(label.innerText,idGIF);
+                    let buscar = label.innerText.split("#");
+                    let terminoBusqueda = "";
+                    for (let i = 0; i < buscar.length; i++) {
+                        terminoBusqueda += buscar[i] + " ";
+                        if (i == 3)
+                            break;
+                    }
+                    cargarBusqueda(terminoBusqueda);
                 });
                 let containerTendencias = document.getElementById('container-tendencias-giph');
                 containerTendencias.appendChild(cajaTendencia);
@@ -280,7 +331,7 @@ function peticionSugerenciasBotones(texto) {
                     if (index == 5)
                         break;
                 }
-            }else{
+            } else {
                 console.log("no se encontro");
             }
         })
