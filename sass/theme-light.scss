@@ -32,7 +32,7 @@ body {
     }
 }
 
-#borde-general{
+#borde-general {
     font-size: 12px;
     font-weight: normal;
 }
@@ -69,6 +69,9 @@ header {
             display: flex;
             position: relative;
         }
+    }
+    img {
+        cursor: pointer;
     }
 }
 
@@ -307,7 +310,7 @@ div.container-tendencias-giph {
         position: relative;
         cursor: pointer;
         margin-bottom: 20px;
-        div{
+        div {
             position: absolute;
             bottom: 4px;
             left: 4px;
@@ -316,11 +319,10 @@ div.container-tendencias-giph {
             padding: 5px;
             width: 97%;
         }
-        &:hover > img{
+        &:hover > img {
             transform: scale(0.985);
-
         }
-        &:hover > div{
+        &:hover > div {
             display: flex;
         }
     }
@@ -328,11 +330,10 @@ div.container-tendencias-giph {
         width: 275px;
         height: 300px;
         max-width: 550px;
-      
     }
 }
 
-section.busqueda{
+section.busqueda {
     display: none;
     grid-area: 6 / 2 / 7 / 6;
 }
@@ -342,6 +343,7 @@ section.busqueda div.titulo {
     border: 1px solid #e6bbe2;
     box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
     padding: 10px;
+    position: relative;
 }
 
 div.container-busqueda-giph {
@@ -360,7 +362,7 @@ div.container-busqueda-giph {
         position: relative;
         cursor: pointer;
         margin-bottom: 20px;
-        div{
+        div {
             position: absolute;
             bottom: 4px;
             left: 4px;
@@ -369,11 +371,10 @@ div.container-busqueda-giph {
             padding: 5px;
             width: 97%;
         }
-        &:hover > img{
+        &:hover > img {
             transform: scale(0.985);
-
         }
-        &:hover > div{
+        &:hover > div {
             display: flex;
         }
     }
@@ -381,6 +382,23 @@ div.container-busqueda-giph {
         width: 275px;
         height: 300px;
         max-width: 550px;
-      
+    }
+}
+
+div.caja-sugerencias {
+    position: absolute;
+    top: 270px;
+    display: flex;
+    button {
+        background: #4180f6;
+        border: 1px solid #4c2f99;
+        box-shadow: inset -1px -1px 0 0 #284f99, inset 1px 1px 0 0 #ffffff;
+        padding: 10px;
+        color: #fff;
+        cursor: pointer;
+        margin-right: 20px;
+        &:hover {
+            background: #3a72db;
+        }
     }
 }

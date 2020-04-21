@@ -105,6 +105,10 @@ header nav div {
   position: relative;
 }
 
+header img {
+  cursor: pointer;
+}
+
 .btn {
   color: #110038;
   font-size: 16px;
@@ -482,6 +486,7 @@ section.busqueda div.titulo {
   -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
           box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
   padding: 10px;
+  position: relative;
 }
 
 div.container-busqueda-giph {
@@ -541,5 +546,28 @@ div.container-busqueda-giph img {
   width: 275px;
   height: 300px;
   max-width: 550px;
+}
+
+div.caja-sugerencias {
+  position: absolute;
+  top: 270px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.caja-sugerencias button {
+  background: #4180f6;
+  border: 1px solid #4c2f99;
+  -webkit-box-shadow: inset -1px -1px 0 0 #284f99, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #284f99, inset 1px 1px 0 0 #ffffff;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+div.caja-sugerencias button:hover {
+  background: #3a72db;
 }
 /*# sourceMappingURL=theme-light.css.map */
