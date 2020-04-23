@@ -4,6 +4,7 @@ let btnElegirTema2 = document.getElementById('btn-elegir-tema2');
 let opLight = document.getElementById('op-light');
 let opDark = document.getElementById('op-dark');
 let linkCss = document.getElementById('estilos');
+let btnCrearGuifos = document.getElementById('btn-crear-guifos');
 
 cajaOpcionesTema.addEventListener('mouseleave', () => {
     cajaOpcionesTema.style.display = "none";
@@ -35,7 +36,9 @@ logo.addEventListener('click', () => {
     window.location = 'index.html';
 });
 
-
+btnCrearGuifos.addEventListener('click',()=>{
+    document.getElementById('misgifos').style.gridArea = '4 / 2 / 5 / 6';
+});
 
 function cargarDatosIniciales() {
 

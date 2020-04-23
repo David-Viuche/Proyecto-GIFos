@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <div class="borde-general borde-ventana">
         <label id="borde-general">¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:
             12.765.803</label>
@@ -18,10 +17,11 @@
     <header>
         <img src="img/gifOF_logo.png" alt="logo gifos" id="logo">
         <nav>
-            <button class="btn">Crear Guifos</button>
+            <button class="btn" id="btn-crear-guifos">Crear Guifos</button>
             <div>
                 <button class="btn" id="btn-elegir-tema">Elegir tema</button>
-                <button class="btn flecha" id="btn-elegir-tema2"><img src="img/dropdown.svg" alt="drop down button"></button>
+                <button class="btn flecha" id="btn-elegir-tema2"><img src="img/dropdown.svg"
+                        alt="drop down button"></button>
                 <div class="opciones caja" id="opciones-tema">
                     <button class="btn-caja" id="op-light"><span>S</span>ailor Day</button>
                     <button class="btn-caja" id="op-dark"><span>S</span>ailor Night</button>
@@ -30,11 +30,36 @@
             <a href="/misgifos.html"><span>M</span>is Guifos</a>
         </nav>
     </header>
-    <section class="misgifos" id="misgifos">
+    <!-- <section class="misgifos" id="misgifos">
         <div class="titulo">
             Mis guifos
         </div>
         <div class="container-misgifos-giph" id="container-misgifos-giph"></div>
+    </section> -->
+    <section class="ventana-crear" id="ventana-crear">
+        <div class="container-crear-giph" id="container-crear-giph">
+            <div class="borde-ventana"><label>Crear Guifos</label></div>
+            <div class="iniciar-crear" id="iniciar-crear">
+                <div class="titulo-crear">
+                    <img src="img/window img.png" alt="icono-ventana">
+                    <label>Aquí podrás crear tus propios guifos</label>
+                </div>
+                <div class="contenido-crear">
+                    <label>Crear tu <span>guifo</span> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos
+                        personalizados. Los pasos para crear tu guifo son:</label>
+                    <ol>
+                        <li>Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+                        <li>Capturar tu momento guifo</li>
+                        <li>Revisar el momento</li>
+                        <li>Listo para subir y compartir!</li>
+                    </ol>
+                    <label>¿¿Quieres comenzar a crear tu guifo ahora?</label>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
     </section>
     <script src="js/script-misgifos.js"></script>
 </body>

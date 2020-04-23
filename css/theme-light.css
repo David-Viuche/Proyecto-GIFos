@@ -644,4 +644,91 @@ div.container-misgifos-giph img {
   width: 275px;
   height: 300px;
 }
+
+section.ventana-crear {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: 3 / 2 / 4 / 6;
+}
+
+div.container-crear-giph {
+  margin: 50px auto 0 auto;
+  height: auto;
+  width: 60%;
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.container-crear-giph div.borde-ventana {
+  margin-top: 2px;
+  width: 99%;
+  height: 24px;
+  padding: 5px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.iniciar-crear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 99%;
+}
+
+div.iniciar-crear div.titulo-crear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+}
+
+div.iniciar-crear div.titulo-crear img {
+  margin: 0 15px 0 20px;
+}
+
+div.iniciar-crear div.titulo-crear label {
+  font-weight: bold;
+  color: #110038;
+}
+
+div.iniciar-crear div.contenido-crear {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 65px;
+  font-size: 14px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 20px;
+}
+
+div.iniciar-crear div.contenido-crear span {
+  font-weight: bold;
+  font-style: italic;
+}
 /*# sourceMappingURL=theme-light.css.map */

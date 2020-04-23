@@ -645,4 +645,12 @@ div.container-misgifos-giph img {
   width: 275px;
   height: 300px;
 }
+
+section.ventana-crear {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: 3 / 2 / 4 / 6;
+}
 /*# sourceMappingURL=theme-dark.css.map */
