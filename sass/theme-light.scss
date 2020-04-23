@@ -245,7 +245,7 @@ section.contenido .titulo {
         box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
         position: relative;
         div {
-            width: 98%;
+            width: 97.5%;
             margin: 2px auto auto auto;
             font-size: 14px;
             color: #ffffff;
@@ -317,7 +317,7 @@ div.container-tendencias-giph {
             display: none;
             height: 25px;
             padding: 5px;
-            width: 98%;
+            width: 97%;
         }
         &:hover > img {
             transform: scale(0.985);
@@ -327,9 +327,9 @@ div.container-tendencias-giph {
         }
     }
     img {
-        min-width: 275px;
+        width: 275px;
         height: 300px;
-        max-width: 550px;
+        // max-width: 550px;
     }
 }
 
@@ -344,6 +344,7 @@ section.busqueda div.titulo {
     box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
     padding: 10px;
     position: relative;
+    margin-top: 50px;
 }
 
 div.container-busqueda-giph {
@@ -362,7 +363,6 @@ div.container-busqueda-giph {
         position: relative;
         cursor: pointer;
         margin-bottom: 20px;
-        min-width: 275px;
         div {
             position: absolute;
             bottom: 4px;
@@ -370,7 +370,7 @@ div.container-busqueda-giph {
             display: none;
             height: 25px;
             padding: 5px;
-            width: 97%;
+            width: 97.5%;
         }
         &:hover > img {
             transform: scale(0.985);
@@ -380,16 +380,18 @@ div.container-busqueda-giph {
         }
     }
     img {
-        min-width: 275px;
+        width: 275px;
         height: 300px;
-        max-width: 550px;
+        // max-width: 550px;
     }
 }
 
 div.caja-sugerencias {
     position: absolute;
-    top: 270px;
-    display: flex;
+    top: 250px;
+    width: 86%;
+    height: 39px;
+    overflow: hidden;
     button {
         background: #4180f6;
         border: 1px solid #4c2f99;
@@ -401,5 +403,56 @@ div.caja-sugerencias {
         &:hover {
             background: #3a72db;
         }
+    }
+}
+
+section.misgifos {
+    grid-area: 3 / 2 / 4 / 6;
+}
+
+section.misgifos div.titulo {
+    background: #fffafe;
+    border: 1px solid #e6bbe2;
+    box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+    padding: 10px;
+    position: relative;
+}
+
+div.container-misgifos-giph {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div.caja-misgifos {
+        background: #e6e6e6;
+        box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 20px;
+        div {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            display: none;
+            height: 25px;
+            padding: 5px;
+            width: 97.5%;
+        }
+        &:hover > img {
+            transform: scale(0.985);
+        }
+        &:hover > div {
+            display: flex;
+        }
+    }
+    img {
+        width: 275px;
+        height: 300px;
+        // max-width: 550px;
     }
 }

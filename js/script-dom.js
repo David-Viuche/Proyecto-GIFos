@@ -9,7 +9,7 @@ let logo = document.getElementById('logo');
 let btnBuscar = document.getElementById('btn-buscar');
 let cajaSugeridos = document.getElementById('caja-sugeridos');
 let textoBusqueda = document.getElementById('texto-buscar');
-
+let iconLupa = document.getElementById('icon-lupa');
 
 cajaOpcionesTema.addEventListener('mouseleave', () => {
     cajaOpcionesTema.style.display = "none";
@@ -26,15 +26,19 @@ btnElegirTema2.addEventListener('click', () => {
 opLight.addEventListener('click', () => {
     linkCss.href = "css/theme-light.css";
     logo.src = "img/gifOF_logo.png";
+    localStorage.setItem('theme', 'light');
+    window.location.reload();
 });
 
 opDark.addEventListener('click', () => {
     linkCss.href = "css/theme-dark.css";
     logo.src = "img/gifOF_logo_dark.png";
+    localStorage.setItem('theme', 'dark');
+    window.location.reload();
 });
 
 logo.addEventListener('click', () => {
-    window.location.reload();
+    window.location = 'index.html';
 });
 
 buscarContainer.addEventListener('mouseleave', () => {
@@ -48,10 +52,14 @@ cajaSugeridos.addEventListener('mouseover', () => {
 });
 
 textoBusqueda.addEventListener('focus', () => {
-    if (linkCss.href == "css/theme-dark.css") {
+    if (localStorage.getItem('theme') == 'dark') {
         btnBuscar.style.backgroundColor = '#EE3EFE';
+        btnBuscar.style.color = '#fff';
+        iconLupa.src = "img/lupa_light.svg";
     } else {
         btnBuscar.style.backgroundColor = '#F7C9F3';
+        btnBuscar.style.color = '#000';
+        iconLupa.src = "img/lupa.svg";
     }
 });
 
@@ -65,6 +73,15 @@ textoBusqueda.addEventListener('input', () => {
 
 textoBusqueda.addEventListener('focusout', cerrarCajaSugeridos);
 
+textoBusqueda.addEventListener('keydown', (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        let texto = textoBusqueda.value;
+        if (texto)
+            cargarBusqueda(texto)
+    }
+});
+
 btnBuscar.addEventListener('click', () => {
     let texto = textoBusqueda.value;
 
@@ -75,20 +92,25 @@ btnBuscar.addEventListener('click', () => {
 
 function cargarBusqueda(texto) {
     document.getElementById('titulo-resultado').innerText = texto + " (resultados)";
-    let sugeridos = document.getElementById('contenido');
     let tendencias = document.getElementById('tendencias');
-    sugeridos.style.display = 'none';
     tendencias.style.display = 'none';
     let busqueda = document.getElementById('busqueda');
     busqueda.style.display = 'grid';
     peticionBusqueda(texto);
-    let textButton = texto.split(" ");
-    peticionSugerenciasBotones(textButton[0].toLowerCase());
+    peticionSugerenciasBotones(texto);
 }
 
 function cerrarCajaSugeridos() {
-    btnBuscar.style.backgroundColor = '#e6e6e6';
     cajaSugeridos.style.display = 'none';
+    if (localStorage.getItem('theme') == 'dark') {
+        btnBuscar.style.backgroundColor = '#b4b4b4';
+        btnBuscar.style.color = '#8f8f8f';
+        iconLupa.src = "img/Combined Shape.svg";
+    } else {
+        btnBuscar.style.backgroundColor = '#e6e6e6';
+        btnBuscar.style.color = '#b4b4b4';
+        iconLupa.src = "img/lupa_inactive.svg";
+    }
 }
 
 // peticiones API
@@ -130,13 +152,12 @@ function peticionBusqueda(url) {
     let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
     let rating = '&rating=g';
     let limit = '&limit=24';
-    let endPoint = giphy + "?api_key=" + key + "&q=" + url + rating + limit;
+    let endPoint = giphy + "?api_key=" + key + "&q=" + url + rating + limit + "lang=es";
     fetch(endPoint)
         .then((data) => {
             return data.json()
         })
         .then((json) => {
-            console.log(json);
             if (json.data.length) {
                 let containerBusqueda = document.getElementById('container-busqueda-giph');
                 containerBusqueda.innerHTML = "";
@@ -146,9 +167,9 @@ function peticionBusqueda(url) {
 
                     let gif = document.createElement('img');
                     gif.src = el.images.fixed_width_downsampled.url;
-                    if (el.images.fixed_width_downsampled.width > el.images.fixed_width_downsampled.height) {
-                        gif.style.width = "550px";
-                    }
+                    // if (el.images.fixed_width_downsampled.width > el.images.fixed_width_downsampled.height) {
+                    //     gif.style.width = "550px";
+                    // }
                     cajaTendencia.appendChild(gif);
 
                     let titulo = document.createElement('div');
@@ -178,7 +199,7 @@ function peticionBusqueda(url) {
 
                     containerBusqueda.appendChild(cajaTendencia);
                 });
-                window.scrollTo(0, 330);
+                window.scrollTo(0, 720);
             } else {
                 console.log("ningun resutlado de busqueda");
             }
@@ -256,7 +277,7 @@ function peticionTendenciasGiph() {
     let rating = '&rating=g';
     let limit = '&limit=24';
 
-    fetch(giphy + "?api_key=" + key + rating + limit)
+    fetch(giphy + "?api_key=" + key + rating + limit + "lang=es")
         .then((data) => {
             return data.json();
         })
@@ -267,9 +288,9 @@ function peticionTendenciasGiph() {
 
                 let gif = document.createElement('img');
                 gif.src = el.images.fixed_width_downsampled.url;
-                if (el.images.fixed_width_downsampled.width > el.images.fixed_width_downsampled.height) {
-                    gif.style.width = "550px";
-                }
+                // if (el.images.fixed_width_downsampled.width > el.images.fixed_width_downsampled.height) {
+                //     gif.style.width = "550px";
+                // }
                 cajaTendencia.appendChild(gif);
                 let titulo = document.createElement('div');
                 titulo.classList.add('borde-ventana');
@@ -307,37 +328,30 @@ function peticionTendenciasGiph() {
 }
 
 function peticionSugerenciasBotones(texto) {
-    let giphy = 'https://api.giphy.com/v1/gifs/search/tags';
-    let key = 'p8v3HTqAOrj6dkDFYpjtOOyhSsJRLp6j';
+    let cajaRelacionados = document.getElementById('caja-sugerencias');
+    cajaRelacionados.innerHTML = "";
+    if (localStorage.getItem('historial') == null) {
+        let array = [texto];
+        localStorage.setItem('historial', JSON.stringify(array));
+    } else {
+        let data = JSON.parse(localStorage.getItem('historial'));
 
-    fetch(giphy + "?api_key=" + key + "&q=" + `'${texto}'`)
-        .then((data) => {
-            return data.json()
-        })
-        .then((json) => {
-            if (json.data.length) {
-                let cajaRelacionados = document.getElementById('caja-sugerencias');
-                cajaRelacionados.innerHTML = "";
+        data.unshift(texto);
 
-                for (let index = 0; index < json.data.length; index++) {
-                    let sug = document.createElement('button');
-                    sug.innerHTML = "#" + json.data[index].name;
+        for (let index = 1; index < data.length; index++) {
+            let sug = document.createElement('button');
+            sug.innerHTML = "#" + data[index];
 
-                    sug.addEventListener('click', () => {
-                        cargarBusqueda(json.data[index].name);
-                    });
-                    cajaRelacionados.appendChild(sug);
+            sug.addEventListener('click', () => {
+                cargarBusqueda(data[index]);
+            });
+            cajaRelacionados.appendChild(sug);
+            if (index == 15)
+                break;
+        }
 
-                    if (index == 5)
-                        break;
-                }
-            } else {
-                console.log("no se encontro");
-            }
-        })
-        .catch((err) => {
-            console.log(err);
-        })
+        localStorage.setItem('historial', JSON.stringify(data));
+    }
 }
 
 
@@ -346,7 +360,21 @@ function cargarDatosIniciales() {
         peticionGiphSugerencia(i);
     }
 
-    peticionTendenciasGiph();
+    peticionTendenciasGiph();   
+
+    if (localStorage.getItem('theme') == null) {
+        localStorage.setItem('theme', 'light');
+    } else {
+        if (localStorage.getItem('theme') == 'light') {
+            linkCss.href = "css/theme-light.css";
+            logo.src = "img/gifOF_logo.png";
+            localStorage.setItem('theme', 'light');
+        } else {
+            linkCss.href = "css/theme-dark.css";
+            logo.src = "img/gifOF_logo_dark.png";
+            localStorage.setItem('theme', 'dark');
+        }
+    }
 }
 
 
