@@ -139,8 +139,8 @@ header {
 
 section.buscar {
     grid-area: 3 / 2 / 4 / 6;
-    background: #e6e6e6;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+    background: #b4b4b4;
+    box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
     padding: 3px;
     display: flex;
     flex-direction: column;
@@ -174,9 +174,9 @@ section.buscar {
             height: 60%;
             margin-left: 5px;
             font-size: 16px;
-            color: #b4b4b4;
+            color: #8f8f8f;
             line-height: 18px;
-            background: #e6e6e6;
+            background: #b4b4b4;
             border: 1px solid #808080;
             box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
             padding: 5px 10px 5px 3px;
@@ -191,7 +191,7 @@ section.buscar {
 .caja-sugeridos {
     position: absolute;
     top: 100px;
-    background: #e6e6e6;
+    background: #b4b4b4;
     box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
     width: 100%;
     left: -0.5px;
@@ -204,7 +204,7 @@ section.buscar {
     button.btn-sugeridos {
         width: 89.5%;
         margin: 5px;
-        background: #f0f0f0;
+        background: #cccccc;
         border: 1px solid #808080;
         box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
         font-size: 16px;
@@ -227,8 +227,8 @@ section.contenido {
 section.contenido .titulo {
     position: relative;
     background: #fffafe;
-    border: 1px solid #e6bbe2;
-    box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+    border: 1px solid #2e32fb;
+    box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #110038;
     padding: 10px;
     top: -42px;
 }
@@ -242,11 +242,11 @@ section.contenido .titulo {
         flex-direction: column;
         width: 275px;
         height: 300px;
-        background: #e6e6e6;
+        background: #cccccc;
         box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
         position: relative;
         div {
-            width: 98%;
+            width: 97.5%;
             margin: 2px auto auto auto;
             font-size: 14px;
             color: #ffffff;
@@ -286,8 +286,8 @@ section.contenido .titulo {
 section.tendencias div.titulo {
     margin-top: 60px;
     background: #fffafe;
-    border: 1px solid #e6bbe2;
-    box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+    border: 1px solid #2e32fb;
+    box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #110038;
     padding: 10px;
 }
 
@@ -318,7 +318,7 @@ div.container-tendencias-giph {
             display: none;
             height: 25px;
             padding: 5px;
-            width: 98%;
+            width: 97%;
         }
         &:hover > img {
             transform: scale(0.985);
@@ -328,9 +328,9 @@ div.container-tendencias-giph {
         }
     }
     img {
-        min-width: 275px;
+        width: 275px;
         height: 300px;
-        max-width: 550px;
+        // max-width: 550px;
     }
 }
 
@@ -345,6 +345,7 @@ section.busqueda div.titulo {
     box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
     padding: 10px;
     position: relative;
+    margin-top: 50px;
 }
 
 div.container-busqueda-giph {
@@ -370,7 +371,7 @@ div.container-busqueda-giph {
             display: none;
             height: 25px;
             padding: 5px;
-            width: 97%;
+            width: 97.5%;
         }
         &:hover > img {
             transform: scale(0.985);
@@ -380,16 +381,18 @@ div.container-busqueda-giph {
         }
     }
     img {
-        min-width: 275px;
+        width: 275px;
         height: 300px;
-        max-width: 550px;
+        // max-width: 550px;
     }
 }
 
 div.caja-sugerencias {
     position: absolute;
-    top: 270px;
-    display: flex;
+    top: 250px;
+    width: 86%;
+    height: 39px;
+    overflow: hidden;
     button {
         background: #4180f6;
         border: 1px solid #4c2f99;
@@ -401,5 +404,56 @@ div.caja-sugerencias {
         &:hover {
             background: #3a72db;
         }
+    }
+}
+
+section.misgifos {
+    grid-area: 3 / 2 / 4 / 6;
+}
+
+section.misgifos div.titulo {
+    background: #fffafe;
+    border: 1px solid #2E32FB;
+    box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+    padding: 10px;
+    position: relative;
+}
+
+div.container-misgifos-giph {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    div.caja-misgifos {
+        background: #e6e6e6;
+        box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        margin-bottom: 20px;
+        div {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            display: none;
+            height: 25px;
+            padding: 5px;
+            width: 97.5%;
+        }
+        &:hover > img {
+            transform: scale(0.985);
+        }
+        &:hover > div {
+            display: flex;
+        }
+    }
+    img {
+        width: 275px;
+        height: 300px;
+        // max-width: 550px;
     }
 }

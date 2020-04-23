@@ -187,9 +187,9 @@ section.buscar {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-area: 3 / 2 / 4 / 6;
-  background: #e6e6e6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  background: #b4b4b4;
+  -webkit-box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #8f8f8f, inset 2px 2px 0 0 #ffffff;
   padding: 3px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -248,9 +248,9 @@ section.buscar div.busqueda button {
   height: 60%;
   margin-left: 5px;
   font-size: 16px;
-  color: #b4b4b4;
+  color: #8f8f8f;
   line-height: 18px;
-  background: #e6e6e6;
+  background: #b4b4b4;
   border: 1px solid #808080;
   -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
@@ -265,7 +265,7 @@ section.buscar div.busqueda button img {
 .caja-sugeridos {
   position: absolute;
   top: 100px;
-  background: #e6e6e6;
+  background: #b4b4b4;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
           box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   width: 100%;
@@ -286,7 +286,7 @@ section.buscar div.busqueda button img {
 .caja-sugeridos button.btn-sugeridos {
   width: 89.5%;
   margin: 5px;
-  background: #f0f0f0;
+  background: #cccccc;
   border: 1px solid #808080;
   -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
           box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
@@ -314,9 +314,9 @@ section.contenido {
 section.contenido .titulo {
   position: relative;
   background: #fffafe;
-  border: 1px solid #e6bbe2;
-  -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
-          box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+  border: 1px solid #2e32fb;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #110038;
+          box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #110038;
   padding: 10px;
   top: -42px;
 }
@@ -345,14 +345,14 @@ section.contenido .titulo {
           flex-direction: column;
   width: 275px;
   height: 300px;
-  background: #e6e6e6;
+  background: #cccccc;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
           box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   position: relative;
 }
 
 .container-sugerencia-giph .caja-tendencia div {
-  width: 98%;
+  width: 97.5%;
   margin: 2px auto auto auto;
   font-size: 14px;
   color: #ffffff;
@@ -399,9 +399,9 @@ section.contenido .titulo {
 section.tendencias div.titulo {
   margin-top: 60px;
   background: #fffafe;
-  border: 1px solid #e6bbe2;
-  -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
-          box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+  border: 1px solid #2e32fb;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #110038;
+          box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #110038;
   padding: 10px;
 }
 
@@ -452,7 +452,7 @@ div.container-tendencias-giph div.caja-tendencia div {
   display: none;
   height: 25px;
   padding: 5px;
-  width: 98%;
+  width: 97%;
 }
 
 div.container-tendencias-giph div.caja-tendencia:hover > img {
@@ -467,9 +467,8 @@ div.container-tendencias-giph div.caja-tendencia:hover > div {
 }
 
 div.container-tendencias-giph img {
-  min-width: 275px;
+  width: 275px;
   height: 300px;
-  max-width: 550px;
 }
 
 section.busqueda {
@@ -488,6 +487,7 @@ section.busqueda div.titulo {
           box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
   padding: 10px;
   position: relative;
+  margin-top: 50px;
 }
 
 div.container-busqueda-giph {
@@ -529,7 +529,7 @@ div.container-busqueda-giph div.caja-busqueda div {
   display: none;
   height: 25px;
   padding: 5px;
-  width: 97%;
+  width: 97.5%;
 }
 
 div.container-busqueda-giph div.caja-busqueda:hover > img {
@@ -544,17 +544,16 @@ div.container-busqueda-giph div.caja-busqueda:hover > div {
 }
 
 div.container-busqueda-giph img {
-  min-width: 275px;
+  width: 275px;
   height: 300px;
-  max-width: 550px;
 }
 
 div.caja-sugerencias {
   position: absolute;
-  top: 270px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  top: 250px;
+  width: 86%;
+  height: 39px;
+  overflow: hidden;
 }
 
 div.caja-sugerencias button {
@@ -570,5 +569,80 @@ div.caja-sugerencias button {
 
 div.caja-sugerencias button:hover {
   background: #3a72db;
+}
+
+section.misgifos {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: 3 / 2 / 4 / 6;
+}
+
+section.misgifos div.titulo {
+  background: #fffafe;
+  border: 1px solid #2E32FB;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+          box-shadow: inset -2px -2px 0 0 #e6dce4, inset 2px 2px 0 0 #80687d;
+  padding: 10px;
+  position: relative;
+}
+
+div.container-misgifos-giph {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+div.container-misgifos-giph div.caja-misgifos {
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  width: auto;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+div.container-misgifos-giph div.caja-misgifos div {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  display: none;
+  height: 25px;
+  padding: 5px;
+  width: 97.5%;
+}
+
+div.container-misgifos-giph div.caja-misgifos:hover > img {
+  -webkit-transform: scale(0.985);
+          transform: scale(0.985);
+}
+
+div.container-misgifos-giph div.caja-misgifos:hover > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.container-misgifos-giph img {
+  width: 275px;
+  height: 300px;
 }
 /*# sourceMappingURL=theme-dark.css.map */
