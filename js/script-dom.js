@@ -1,15 +1,15 @@
-let btnElegirTema = document.getElementById('btn-elegir-tema');
-let btnElegirTema2 = document.getElementById('btn-elegir-tema2');
-let opLight = document.getElementById('op-light');
-let opDark = document.getElementById('op-dark');
-let buscarContainer = document.getElementById('buscar-container');
-let cajaOpcionesTema = document.getElementById('opciones-tema');
-let linkCss = document.getElementById('estilos');
-let logo = document.getElementById('logo');
-let btnBuscar = document.getElementById('btn-buscar');
-let cajaSugeridos = document.getElementById('caja-sugeridos');
-let textoBusqueda = document.getElementById('texto-buscar');
-let iconLupa = document.getElementById('icon-lupa');
+const btnElegirTema = document.getElementById('btn-elegir-tema');
+const btnElegirTema2 = document.getElementById('btn-elegir-tema2');
+const opLight = document.getElementById('op-light');
+const opDark = document.getElementById('op-dark');
+const buscarContainer = document.getElementById('buscar-container');
+const cajaOpcionesTema = document.getElementById('opciones-tema');
+const linkCss = document.getElementById('estilos');
+const logo = document.getElementById('logo');
+const btnBuscar = document.getElementById('btn-buscar');
+const cajaSugeridos = document.getElementById('caja-sugeridos');
+const textoBusqueda = document.getElementById('texto-buscar');
+const iconLupa = document.getElementById('icon-lupa');
 
 cajaOpcionesTema.addEventListener('mouseleave', () => {
     cajaOpcionesTema.style.display = "none";
