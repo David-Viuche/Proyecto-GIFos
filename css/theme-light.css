@@ -95,7 +95,7 @@ header nav a:hover span {
 }
 
 header nav a:active {
-  color: #1100389f;
+  color: #110038;
 }
 
 header nav div {
@@ -105,8 +105,22 @@ header nav div {
   position: relative;
 }
 
-header img {
+header div.container-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header div.container-logo img.logo {
   cursor: pointer;
+}
+
+header div.container-logo img.logo:first-child {
+  margin-right: 15px;
+  display: none;
 }
 
 .btn {
@@ -651,6 +665,7 @@ section.ventana-crear {
   -ms-grid-column: 2;
   -ms-grid-column-span: 4;
   grid-area: 3 / 2 / 4 / 6;
+  display: none;
 }
 
 div.container-crear-giph {
@@ -712,7 +727,7 @@ div.iniciar-crear div.titulo-crear label {
   color: #110038;
 }
 
-div.iniciar-crear div.contenido-crear {
+div.contenido-crear {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -724,11 +739,140 @@ div.iniciar-crear div.contenido-crear {
   font-size: 14px;
   color: #110038;
   letter-spacing: 0;
-  line-height: 20px;
+  line-height: 30px;
 }
 
-div.iniciar-crear div.contenido-crear span {
+div.contenido-crear span {
   font-weight: bold;
   font-style: italic;
+}
+
+div.contenido-crear ol {
+  counter-reset: li;
+  list-style: none;
+}
+
+div.contenido-crear ol > li:before {
+  counter-increment: li;
+  content: counter(li) ") ";
+  font-weight: bold;
+}
+
+div.botones {
+  margin: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+div.botones button:first-child {
+  margin-right: 10px;
+}
+
+.btn-2 {
+  background: #fff4fd;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+}
+
+.btn-2:hover {
+  background: #f0e5ee;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+}
+
+div.container-precaptura {
+  margin: 50px auto 0 auto;
+  height: auto;
+  width: 60%;
+  background: #e6e6e6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+          box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.container-precaptura div.borde-ventana {
+  margin-top: 2px;
+  width: 99%;
+  height: 24px;
+  padding: 5px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.container-precaptura div.borde-ventana img {
+  cursor: pointer;
+}
+
+div.container-precaptura video {
+  background: #ffffff;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+  width: 98%;
+  margin-top: 1%;
+}
+
+div.container-precaptura .container {
+  width: 100%;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 1%;
+}
+
+div.container-precaptura div.botones-captura {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+div.container-precaptura div.botones-captura button:first-child {
+  width: 36px;
+  border-right: 0;
+}
+
+div.container-precaptura div.botones-captura button.btn-capturar {
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0;
 }
 /*# sourceMappingURL=theme-light.css.map */
