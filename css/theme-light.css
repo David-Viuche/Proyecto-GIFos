@@ -875,4 +875,53 @@ div.container-precaptura div.botones-captura button.btn-capturar {
   padding: 0;
   margin: 0;
 }
+
+div.botones-grabacion {
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0 1%;
+  height: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.botones-grabacion label {
+  background: #ffffff;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+  padding: 5px 15px;
+}
+
+div.botones-grabacion div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.botones-grabacion div button:first-child {
+  width: 36px;
+  border-right: 0;
+}
+
+div.botones-grabacion div button.btn-capturar {
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0;
+  background-color: #ff6161;
+  color: #fff;
+}
 /*# sourceMappingURL=theme-light.css.map */

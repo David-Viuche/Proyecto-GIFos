@@ -67,14 +67,23 @@
         </div>
         <div class="container-precaptura" id="container-precaptura">
             <div class="borde-ventana">
-                <label>Un Chequeo Antes de Empezar</label>
+                <label id="titulo-ventana">Un Chequeo Antes de Empezar</label>
                 <img src="img/close.svg" alt="cerrar-ventana" id="btn-cerrar-captura">
             </div>
             <video id="video"></video>
-            <div class="container">
-                <div class="botones-captura">
-                    <button class="btn btn-capturar"><img src="img/camera.svg" alt="icono camara"></button>
-                    <button class="btn btn-capturar">Capturar</button>
+            <video id="video2"></video>
+            <img src="" alt="gifCreado" id="gif-creado">
+            <div class="container" id="container-botones-captura">
+                <div class="botones-captura" id="botones-captura">
+                    <button class="btn btn-capturar" id="btn-capturar-img"><img src="img/camera.svg" alt="icono camara" id="icon-camara"></button>
+                    <button class="btn btn-capturar" id="btn-capturar">Capturar</button>
+                </div>
+            </div>
+            <div class="botones-grabacion" id="botones-grabacion">
+                <label>00:00:03:06</label>
+                <div>
+                    <button class="btn btn-capturar" id="btn-detener-img"><img src="img/recording.svg"alt="icono grabando" id="icon-grabando"></button>
+                    <button class="btn btn-capturar" id="btn-detener">Listo</button>
                 </div>
             </div>
         </div>

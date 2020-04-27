@@ -580,7 +580,7 @@ div.container-precaptura {
         width: 98%;
         margin-top: 1%;
     }
-    .container{
+    .container {
         width: 100%;
         height: 70px;
         display: flex;
@@ -588,20 +588,52 @@ div.container-precaptura {
         align-items: center;
         padding-right: 1%;
     }
-    div.botones-captura{
+    div.botones-captura {
         display: flex;
         justify-content: center;
-        button:first-child{
+        button:first-child {
             width: 36px;
             border-right: 0;
         }
-        button.btn-capturar{
+        button.btn-capturar {
             height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 0;
             margin: 0;
+        }
+    }
+}
+
+div.botones-grabacion {
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 1%;
+    height: 70px;
+    align-items: center;
+    label {
+        background: #ffffff;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+        padding: 5px 15px;
+    }
+    div {
+        display: flex;
+        button:first-child {
+            width: 36px;
+            border-right: 0;
+        }
+        button.btn-capturar {
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            background-color: #ff6161;
+            color: #fff;
         }
     }
 }
