@@ -67,14 +67,98 @@
         </div>
         <div class="container-precaptura" id="container-precaptura">
             <div class="borde-ventana">
-                <label>Un Chequeo Antes de Empezar</label>
+                <label id="titulo-ventana">Un Chequeo Antes de Empezar</label>
                 <img src="img/close.svg" alt="cerrar-ventana" id="btn-cerrar-captura">
             </div>
             <video id="video"></video>
-            <div class="container">
-                <div class="botones-captura">
-                    <button class="btn btn-capturar"><img src="img/camera.svg" alt="icono camara"></button>
-                    <button class="btn btn-capturar">Capturar</button>
+            <video id="video2"></video>
+            <div class="container" id="container-botones-captura">
+                <div class="botones-captura" id="botones-captura">
+                    <button class="btn btn-capturar" id="btn-capturar-img"><img src="img/camera.svg" alt="icono camara"
+                            id="icon-camara"></button>
+                    <button class="btn btn-capturar" id="btn-capturar">Capturar</button>
+                </div>
+            </div>
+            <div class="botones-grabacion" id="botones-grabacion">
+                <label id="tiempo-captura">00:00:00</label>
+                <div>
+                    <button class="btn btn-capturar" id="btn-detener-img"><img src="img/recording.svg"
+                            alt="icono grabando" id="icon-grabando"></button>
+                    <button class="btn btn-capturar" id="btn-detener">Listo</button>
+                </div>
+            </div>
+            <div class="botones-vista-previa" id="botones-vista-previa">
+                <div class="container-controles">
+                    <label id="tiempo-reproduccion-vistaprevia">00:00:00</label>
+                    <button class="btn" id="btn-play"><img src="img/forward.svg" alt="button play"></button>
+                    <div class="barra-progreso">
+                        <div class="value">
+                            <div class="progreso" id="barra-progreso"></div>
+                            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="botones-accion">
+                    <button class="btn btn-2" id="btn-repetir-captura">Repetir Captura</button>
+                    <button class="btn" id="btn-sub">Subir Guifo</button>
+                </div>
+            </div>
+            <div class="subiendo-gif" id="subiendo-gif">
+                <div class="ventana-subiendo">
+                    <img src="img/globe_img.png" alt="icono cargando globo terraqueo">
+                    <h3>Estamos subiendo tu guifo…</h3>
+                    <div class="barra-progreso">
+                        <div class="value">
+                            <div class="progreso" id="barra-progreso"></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <p>Tiempo restante: <span>38 años</span> algunos minutos</p>
+                </div>
+                <div class="container-boton-cancelar">
+                    <button class="btn btn-2" id="btn-cancelar-subir">Cancelar</button>
+                </div>
+            </div>
+            <div class="gif-exitoso" id="gif-exitoso">
+                <div class="container-gif">
+                    <img src="" alt="gif-subido" id="gifExitoso">
+                    <div class="botones">
+                        <h3>Guifo creado con éxito</h3>
+                        <button class="btn btn-2" id="btn-copiar-enlace">Copiar Enlace Guifo</button>
+                        <button class="btn btn-2" id="btn-descargar-gif">Descargar Guifo</button>
+                    </div>
+                </div>
+                <div class="container-boton">
+                    <button class="btn" id="btn-listo">Listo</button>
                 </div>
             </div>
         </div>

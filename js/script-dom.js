@@ -10,6 +10,7 @@ const btnBuscar = document.getElementById('btn-buscar');
 const cajaSugeridos = document.getElementById('caja-sugeridos');
 const textoBusqueda = document.getElementById('texto-buscar');
 const iconLupa = document.getElementById('icon-lupa');
+const btnCrearGif = document.getElementById('btn-crear-guifos');
 
 cajaOpcionesTema.addEventListener('mouseleave', () => {
     cajaOpcionesTema.style.display = "none";
@@ -88,6 +89,11 @@ btnBuscar.addEventListener('click', () => {
     if (texto) {
         cargarBusqueda(texto);
     }
+});
+
+btnCrearGif.addEventListener('click',()=>{
+    window.location = 'misgifos.html';
+    localStorage.setItem('capturar',true);
 });
 
 function cargarBusqueda(texto) {
@@ -285,7 +291,6 @@ function peticionTendenciasGiph() {
             json.data.map((el) => {
                 let cajaTendencia = document.createElement('div');
                 cajaTendencia.classList.add('caja-tendencia');
-
                 let gif = document.createElement('img');
                 gif.src = el.images.fixed_width_downsampled.url;
                 // if (el.images.fixed_width_downsampled.width > el.images.fixed_width_downsampled.height) {

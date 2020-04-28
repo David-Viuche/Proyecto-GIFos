@@ -123,6 +123,10 @@ header div.container-logo img.logo:first-child {
   display: none;
 }
 
+header #logo {
+  cursor: pointer;
+}
+
 .btn {
   color: #110038;
   font-size: 16px;
@@ -629,7 +633,6 @@ div.container-misgifos-giph div.caja-misgifos {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  cursor: pointer;
   margin-bottom: 20px;
 }
 
@@ -832,6 +835,10 @@ div.container-precaptura video {
   margin-top: 1%;
 }
 
+div.container-precaptura #video2 {
+  display: none;
+}
+
 div.container-precaptura .container {
   width: 100%;
   height: 70px;
@@ -874,5 +881,357 @@ div.container-precaptura div.botones-captura button.btn-capturar {
           justify-content: center;
   padding: 0;
   margin: 0;
+}
+
+div.botones-grabacion {
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  padding: 0 1%;
+  height: 70px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.botones-grabacion label {
+  background: #ffffff;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+  padding: 5px 15px;
+}
+
+div.botones-grabacion div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+div.botones-grabacion div button:first-child {
+  width: 36px;
+  border-right: 0;
+}
+
+div.botones-grabacion div button.btn-capturar {
+  height: 36px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  margin: 0;
+  background-color: #ff6161;
+  color: #fff;
+}
+
+.botones-vista-previa {
+  display: none;
+  padding: 3% 1%;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.botones-vista-previa div.botones-accion button.btn-2 {
+  padding: 10px;
+  width: auto;
+}
+
+.botones-vista-previa div.botones-accion button:last-child {
+  margin-right: 0;
+  width: auto;
+}
+
+.botones-vista-previa div.container-controles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.botones-vista-previa div.container-controles label {
+  background: #ffffff;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+  padding: 5px 15px;
+  width: 94px;
+}
+
+.botones-vista-previa div.container-controles button {
+  width: 20px;
+  height: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+}
+
+div.barra-progreso {
+  height: 24px;
+  width: 220px;
+  background: #b4b4b4;
+  -webkit-box-shadow: inset 2px 2px 0 0 #000000, inset -2px -2px 0 0 #fffcfc;
+          box-shadow: inset 2px 2px 0 0 #000000, inset -2px -2px 0 0 #fffcfc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.barra-progreso div.value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 98%;
+  height: 83%;
+  background-color: #999999;
+  position: relative;
+}
+
+div.barra-progreso div.value div {
+  width: 12px;
+  height: 20px;
+  border: 1px solid #b4b4b4;
+  z-index: 11;
+}
+
+div.barra-progreso div.value div.progreso {
+  background-color: #f7c9f3;
+  height: 20px;
+  z-index: 10;
+  position: absolute;
+  left: 0;
+}
+
+div.subiendo-gif {
+  width: 100%;
+  padding: 1%;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.subiendo-gif div.ventana-subiendo {
+  background: #ffffff;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+  width: 100%;
+  height: 341px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.subiendo-gif div.ventana-subiendo img {
+  margin: 10px;
+}
+
+div.subiendo-gif div.ventana-subiendo h3 {
+  font-weight: bold;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+  margin-bottom: 30px;
+}
+
+div.subiendo-gif div.ventana-subiendo p {
+  margin-top: 5px;
+  font-size: 12px;
+  color: rgba(17, 0, 56, 0.64);
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 14px;
+}
+
+div.subiendo-gif div.ventana-subiendo p span {
+  text-decoration: line-through;
+}
+
+div.subiendo-gif div.ventana-subiendo div.barra-progreso {
+  width: 340px;
+}
+
+div.subiendo-gif div.ventana-subiendo div.barra-progreso div.progreso {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-name: cargando;
+          animation-name: cargando;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  width: 70px;
+}
+
+div.subiendo-gif div.container-boton-cancelar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding: 2% 0;
+}
+
+div.subiendo-gif div.container-boton-cancelar button {
+  padding: 10px;
+  width: 144px;
+}
+
+@-webkit-keyframes cargando {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 80%;
+  }
+}
+
+@keyframes cargando {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 80%;
+  }
+}
+
+div.gif-exitoso {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 3%;
+}
+
+div.gif-exitoso div.container-gif {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.gif-exitoso div.container-gif img {
+  height: 200px;
+  min-width: 350px;
+  background: #ffffff;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+}
+
+div.gif-exitoso div.botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+div.gif-exitoso div.botones button {
+  width: 100%;
+  margin: 5px 0;
+}
+
+div.gif-exitoso div.botones h3 {
+  font-weight: bold;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-bottom: 10px;
+}
+
+div.gif-exitoso div.container-boton {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 30px 4%;
 }
 /*# sourceMappingURL=theme-light.css.map */
