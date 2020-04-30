@@ -92,7 +92,7 @@ btnBuscar.addEventListener('click', () => {
 });
 
 btnCrearGif.addEventListener('click',()=>{
-    window.location = '/misgifos.html';
+    window.location = './misgifos.html';
     localStorage.setItem('capturar',true);
 });
 
