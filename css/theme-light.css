@@ -10,9 +10,9 @@
 body {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 7% (1fr)[4] 7%;
+  /* -ms-grid-columns: 7% (1fr)[4] 7%; */
       grid-template-columns: 7% repeat(4, 1fr) 7%;
-  -ms-grid-rows: auto 110px 100px 110px auto auto 100px;
+  /* -ms-grid-rows: auto 110px 100px 110px auto auto 100px; */
       grid-template-rows: auto 110px 100px 110px auto auto 100px;
   background-color: #fff1fd;
 }

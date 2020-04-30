@@ -31,6 +31,11 @@ const btnSubir = document.getElementById('btn-sub');
 const ventanaSubiendo = document.getElementById('subiendo-gif');
 const btnCancelarSubir = document.getElementById('btn-cancelar-subir');
 const ventanaExitoso = document.getElementById('gif-exitoso');
+const btnDescargarGif = document.getElementById('btn-descargar-gif');
+const btnCopiarEnlace = document.getElementById('btn-copiar-enlace');
+
+var controller = new AbortController();
+var signal = controller.signal;
 
 cajaOpcionesTema.addEventListener('mouseleave', () => {
     cajaOpcionesTema.style.display = "none";
@@ -116,6 +121,27 @@ document.getElementById('btn-listo').addEventListener('click', () => {
     window.location.reload();
 });
 
+btnDescargarGif.addEventListener('click',()=>{
+    let a = document.createElement('a');
+    let url = document.getElementById('gifExitoso').src;
+    a.download = 'migif.gif';
+    a.target = '_blank';
+    a.href= url;
+    document.body.appendChild(a);
+    a.click()
+    document.body.removeChild(a);
+});
+
+btnCopiarEnlace.addEventListener('click',()=>{
+  let aux = document.createElement("input");
+  let url = document.getElementById('gifExitoso').src;
+  console.log("url copiado",url);
+  aux.setAttribute("value", url);
+  document.body.appendChild(aux);
+  aux.select();
+  document.execCommand("copy");
+  document.body.removeChild(aux);
+});
 
 function iniciarGrabacion() {
     containerBtnCaptura.style.display = 'none';
@@ -204,9 +230,6 @@ function getStreamAndRecord() {
         .catch((err) => console.log(err));
 }
 
-var controller = new AbortController();
-var signal = controller.signal;
-
 function subirGif() {
     console.log(form.get('file'));
     console.log(recorderGif.getBlob());
@@ -250,9 +273,6 @@ function cambiarVentanaSubido(id) {
             document.getElementById('gifExitoso').src = result.data.images.fixed_width_downsampled.url;
         })
         .catch(error => console.log('error', error));
-
-    // console.log(id);
-    //{"data":{"id":"J4y38AOq06Kuj7UOgo"},"meta":{"msg":"OK","status":200}}
 }
 
 function cargarMisGifs(result) {
@@ -266,7 +286,7 @@ function cargarMisGifs(result) {
         data.unshift(result.data.images.fixed_width_downsampled.url);
 
         let container = document.getElementById('container-misgifos-giph');
-
+        container.innerHTML = '';
         for (let index = 0; index < data.length; index++) {
             let element = ` <div class="caja-misgifos">
                 <img src="${data[index]}">
