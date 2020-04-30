@@ -92,7 +92,7 @@ btnBuscar.addEventListener('click', () => {
 });
 
 btnCrearGif.addEventListener('click',()=>{
-    window.location = 'misgifos.html';
+    window.location = '/misgifos.html';
     localStorage.setItem('capturar',true);
 });
 
@@ -111,7 +111,7 @@ function cerrarCajaSugeridos() {
     if (localStorage.getItem('theme') == 'dark') {
         btnBuscar.style.backgroundColor = '#b4b4b4';
         btnBuscar.style.color = '#8f8f8f';
-        iconLupa.src = "img/Combined Shape.svg";
+        iconLupa.src = "img/Combined_Shape.svg";
     } else {
         btnBuscar.style.backgroundColor = '#e6e6e6';
         btnBuscar.style.color = '#b4b4b4';
@@ -233,7 +233,12 @@ function peticionGiphSugerencia(id) {
                 let cajaBorde = document.createElement('div');
                 cajaBorde.classList.add('borde-ventana');
                 let titulo = document.createElement('label');
-                let tituloFinal = json.data.title.split("by")[0].split(" ");
+                let tituloFinal;
+                if(json.data.title.split("by")==undefined){
+                    tituloFinal = json.data.title;
+                }else{
+                    tituloFinal = json.data.title.split("by")[0].split(" ");
+                }
                 if (tituloFinal[0] == "") {
                     titulo.innerText = "#GIF";
                 } else {
